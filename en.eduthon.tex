@@ -1,0 +1,92 @@
+\documentclass{42-en}
+\newcommand\qdsh{\texttt{42sh}}
+
+\begin{document}
+\title{Dash - ft\_yes}
+\subtitle{yes, please}
+
+\version{draft 2}
+
+\summary
+{
+	YES, we are going to make \textbf{yes}
+}
+
+\maketitle
+
+\tableofcontents
+
+
+\chapter{Foreword}
+
+Looks simple right?
+
+\begin{42ccode}
+#include <stdio.h>
+
+int main()
+{
+	for(;;)
+		printf("y\n");
+}
+\end{42ccode}
+
+\info{
+Harder, Better, Faster, Stronger
+}
+
+\chapter{Objective}
+Create the fastest \textbf{\textit{/usr/bin/yes}}.\\\\\\
+You can ignore interactive script easily with \textit{yes}.
+\begin{42console}
+	$ yes | rm -r large_directory
+\end{42console}
+\info{
+	\url{https://en.wikipedia.org/wiki/Yes\_(Unix)}
+}
+
+\chapter{Instructions}
+
+	\begin{itemize}
+
+		\item Your program should never leak or unexpectedly quit(Segfault for example).
+		\item If your program doesn’t compile, it’s a 0.
+		\item We won't use norminette for dash C project.
+		\item Evaluation will be done on 42 Seoul's Mac.
+		\item This dash is a solo project.
+		\item Turn in your code inside the turn-in repository.
+
+	\end{itemize}
+
+
+\newpage
+
+\chapter{Exercice 00 : BUFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+
+\extitle{ft\_yes}
+\exnumber{00}
+\exfiles{ft\_yes.c}
+\exforbidden{vmsplice, splice}
+\makeheaderfilesforbidden
+\begin{itemize}
+
+	\item All other standard libraries and functions are allowed.
+	\item You don't have to get arguments.
+	\item Program should be at least faster than example code above. Otherwise it's a 0.
+	\item Any assembly code is forbidden.
+	\begin{42console}
+		$ gcc -fno-asm -o ft_yes ft_yes.c
+		$ ./ft_yes | pv >/dev/null
+		136GiB 0:00:33 [4.60GiB/s] [    <=>                                            ]
+	\end{42console}
+
+\end{itemize}
+
+\hint{
+	\url{https://en.wikipedia.org/wiki/GNU_Core_Utilities}
+}
+\info{
+	printf(), puts(), write()
+}
+
+\end{document}
